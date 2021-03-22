@@ -1,0 +1,9 @@
+#brief-summary {
+    border-spacing: 5px;
+    display: table;
+}
+
+.dashboard-content #brief-summary {
+    display: inline-block;
+    width: auto;
+}

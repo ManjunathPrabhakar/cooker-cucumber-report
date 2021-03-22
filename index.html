@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="keywords" content="cooker cucumber">
+    <meta name="description" content="Cooker Cucumber Reports">
+    <meta name="author" content="Manjunath Prabhakar">
+    <!-- HTML TITLE -->
+    <title>Cooker Cucumber Report</title>
+    <!-- HTML ICON -->
+    <link rel="icon" type="image/png" href="cooker-cucumber-logo.png"/>
+    <!-- HTML STYLE SHEETS -->
+    <link rel="stylesheet" href="styles/main_sidebar_styles.css">
+    <link rel="stylesheet" href="styles/main_splashscreen_styles.css">
+    <link rel="stylesheet" href="styles/main_content_styles.css">
+    <link rel="stylesheet" href="styles/main_dashboardcontent_styles.css">
+    <link rel="stylesheet" href="styles/main_collapsable_modal_styles.css">
+    <link rel="stylesheet" href="styles/main_tag_chip_styles.css">
+    <link rel="stylesheet" href="styles/main_alert_styles.css">
+    <!-- HTML JAVASCRIPTS -->
+    <script src="scripts/main_pagechange.js">// External JS</script>
+    <script src="scripts/main_jsdata.js"></script>
+    <script src="scripts/main_collapsible_modal.js"></script>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+          type='text/css'>
+    <!-- Google Font for Status Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+</head>
+
+<body onload="enableView(0)">
+
+<div class="splashscreen">
+    <div>
+        <img src="cooker-cucumber-logo.png" style="padding-right: 10px;" height="50px" width="50px" alt="logo"/>
+        <p>
+            <b>Cooker Cucumber Report v3.0</b> <br>
+            by Manjunath Prabhakar
+        </p>
+    </div>
+</div>
+
+<!--side menu bar start-->
+<div class="side-bar">
+    <div class="companylogo-holder">
+        <img class="companylogo" src="cooker-cucumber-logo.png" alt="logo"/>
+    </div>
+
+    <div class="user-txt-holder" onClick="showToast(null,'Scenarios still under progress');" style="margin-top: 1rem;margin-bottom: 2rem;">
+        <div class="boxborder">
+            <p class="user-txt">M</p>
+        </div>
+    </div>
+
+    <div class="sidebar-menu" onclick="enableView(0)">
+        <div class="boxborder">
+            <div class="menubox-01-selected"></div>
+            <p class="user-txt">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <!--                <i class="material-icons" style="vertical-align: -6px;">dashboard_customize</i>-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20px" height="20px" viewBox="0 0 576 512">&lt;!&ndash; Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) &ndash;&gt;<path d="M288 32C128.94 32 0 160.94 0 320c0 52.8 14.25 102.26 39.06 144.8 5.61 9.62 16.3 15.2 27.44 15.2h443c11.14 0 21.83-5.58 27.44-15.2C561.75 422.26 576 372.8 576 320c0-159.06-128.94-288-288-288zm0 64c14.71 0 26.58 10.13 30.32 23.65-1.11 2.26-2.64 4.23-3.45 6.67l-9.22 27.67c-5.13 3.49-10.97 6.01-17.64 6.01-17.67 0-32-14.33-32-32S270.33 96 288 96zM96 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm48-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm246.77-72.41l-61.33 184C343.13 347.33 352 364.54 352 384c0 11.72-3.38 22.55-8.88 32H232.88c-5.5-9.45-8.88-20.28-8.88-32 0-33.94 26.5-61.43 59.9-63.59l61.34-184.01c4.17-12.56 17.73-19.45 30.36-15.17 12.57 4.19 19.35 17.79 15.17 30.36zm14.66 57.2l15.52-46.55c3.47-1.29 7.13-2.23 11.05-2.23 17.67 0 32 14.33 32 32s-14.33 32-32 32c-11.38-.01-20.89-6.28-26.57-15.22zM480 384c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"/></svg>-->
+            </p>
+        </div>
+        <p class="nav-text">Dashboard</p>
+    </div>
+
+    <div class="sidebar-menu" onclick="enableView(1)">
+        <div class="boxborder">
+            <div class="menubox-02-selected"></div>
+            <p class="user-txt">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <!--                <i class="material-icons" style="vertical-align: -6px;">analytics</i>-->
+            </p>
+        </div>
+        <p class="nav-text">Graph</p>
+    </div>
+
+    <div class="sidebar-menu" onclick="enableView(2)">
+        <div class="boxborder">
+            <div class="menubox-03-selected"></div>
+            <p class="user-txt">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                <!--                <i class="material-icons" style="vertical-align: -6px;">wysiwyg</i>-->
+            </p>
+        </div>
+        <p class="nav-text">Features</p>
+    </div>
+
+    <div class="sidebar-menu" onclick="enableView(3)/*enableView(3)*/">
+        <div class="boxborder">
+            <div class="menubox-04-selected"></div>
+            <p class="user-txt">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <!--                <i class="material-icons" style="vertical-align: -6px;">article</i>-->
+            </p>
+        </div>
+        <p class="nav-text">Scenarios</p>
+    </div>
+
+    <div class="sidebar-menu" onclick="enableView(4)">
+        <div class="boxborder">
+            <div class="menubox-05-selected"></div>
+            <p class="user-txt">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <!--                <i class="material-icons" style="vertical-align: -6px;">storage</i>-->
+            </p>
+        </div>
+        <p class="nav-text">Logs</p>
+    </div>
+
+
+</div>
+<!--side menu bar end-->
+
+<!--main content start-->
+<div class="main-content">
+
+    <div class="dashboard-content">
+
+
+        <div class="container-title">Dashboard
+            <i id="dashboardinfo-tooltip" style="margin-left: 5px; font-size: medium;" class="fa fa-info-circle"
+               aria-hidden="true"></i>
+        </div>
+
+
+        <div style="cursor: pointer;position:fixed; right:0; top:0; margin-top:5px; margin-right: 8px; "
+             onclick="showToast('info','Excel/PDF/Image Snapshot downloads are coming soon!')">
+            <span class="tagchip" style="color: rgb(27,45,85); background: rgb(213,225,250);">
+                <span class="tagname">
+            <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                    <!--                    <i class="fa fa-download" aria-hidden="true"></i>-->
+                   <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path
+                           d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/></svg>
+                    Download
+                </span>
+            </span>
+        </div>
+
+
+        <div id="brief-summary">
+            <div class="project-name-content">
+                <!-- <div>Project Information</div> -->
+                <div class="card-content">
+                    <p class="card-title">Project Name</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        Cooker Cucumber Automation<br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-summary-content">
+
+
+                <div class="card-content">
+                    <p class="card-title">Triggered By</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        Manjunath P<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Test Host</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        HostName<br>
+                    </div>
+                </div>
+
+
+                <div class="card-content">
+                    <p class="card-title">Execution Time</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        4m 2m 3s<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Status</p>
+                    <div class="card-data" onclick="statusEmoji(this)">
+                        <div class="card-start-line"></div>
+                        <i class="material-icons">sentiment_very_satisfied</i><br>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="features-summary-content">
+                <div class="card-content">
+                    <p class="card-title">Features..</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Pass</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Fail</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Skip</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Others</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Pass %</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        <b>10%</b><br>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="scenarios-summary-content">
+                <div class="card-content">
+                    <p class="card-title">Scenarios</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Pass</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Fail</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Skip</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Others</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        1<br>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <p class="card-title">Pass %</p>
+                    <div class="card-data">
+                        <div class="card-start-line"></div>
+                        <b>10%</b><br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="graph-content">
+
+        <div class="container-title">
+            Graph
+            <i id="graphinfo-tooltip" style="margin-left: 5px; font-size: medium;"
+               class="fa fa-info-circle" aria-hidden="true"></i></div>
+
+        <div class="chart-container" style="position: relative; height:20vh; width:40vw">
+            <p>Execution Trend</p>
+            <p><i>please select the chart</i></p>
+            <h1> COMING SOON </h1>
+        </div>
+    </div>
+
+    <div class="features-content">
+
+        <div class="container-title">Features
+            <i id="featuresinfo-tooltip" style="margin-left: 5px; font-size: medium;" class="fa fa-info-circle"
+               aria-hidden="true"></i>
+        </div>
+
+        <!-- SEARCH FILTERS START -->
+        <div class="card-content">
+            <p class="card-title">Search here</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                <p>Filter</p>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">By Feature Name/<br>Feature File Name</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                <input type="text" id="myInput" onkeyup="featureSearch()" placeholder="Search feature names.."><br>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">By Tag(s)</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                <input type="text" id="myTagInput" onkeyup="tagSearch()" placeholder="Search tag(s).."><br>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">By Scenario</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                <input type="text" id="myScenInput" onkeyup="scenarioSearch()" placeholder="Search scenario names.."><br>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">By Status</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                <input type="checkbox" class="statuscheckbox" id="statuspass" name="pass" checked
+                       onclick="featureSearch()"
+                       value="Pass">
+                <label for="statuspass"> Pass</label>
+                <input type="checkbox" class="statuscheckbox" id="statusfail" name="fail" checked
+                       onclick="featureSearch()"
+                       value="Fail">
+                <label for="statusfail"> Fail</label>
+                <input type="checkbox" class="statuscheckbox" id="statusskip" name="skip" checked
+                       onclick="featureSearch()"
+                       value="Skip">
+                <label for="statusskip"> Skip</label>
+                <input type="checkbox" class="statuscheckbox" id="statusothers" checked name="others"
+                       onclick="featureSearch()"
+                       value="Others">
+                <label for="statusothers"> Others</label>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">Clear</p>
+            <div class="card-data" onclick="resetfeaturefilter()">
+                <div class="card-start-line"></div>
+                <i class="material-icons">cancel</i><br>
+            </div>
+        </div>
+        <!-- SEARCH FILTERS END -->
+
+        <div class="featurecoll" style="text-align: center;">
+            <!-- Features List Start -->
+            <!-- Feature Start -->
+            <button type="button" class="collapsibleM">
+                <div class="featbar">
+                    <!-- FEATURE NAME -->
+                    <label class="passfeature"
+                           data-feature-uri="passfeaturefile.feature"><b>
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i> </b>
+                        Feature Name
+                        comes here</label>
+                    <!-- FEATURE STATUS -->
+                    <label>
+
+                        <!-- PASS COUNT -->
+                        <span class="tagchip" style="color: rgb(0,190,170);background: rgb(235, 254, 252);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                16
+                            </span>
+                        </span>
+
+                        <!-- FAIL COUNT -->
+                        <span class="tagchip">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- SKIP COUNT -->
+                        <span class="tagchip" style="color: rgb(171, 190, 0);background: rgb(254, 254, 235);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- OTHERS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 51, 190);background: rgb(235, 243, 254);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                    </label>
+                </div>
+
+            </button>
+            <div class="contentM">
+                <div style="text-align: left;" class="chip">
+                    <p class="tagdata"> <i class="material-icons rotate-45">label</i><div>@SeleniumEasyDemo</div></p>
+                    <p class="tagdata"> <i class="material-icons rotate-45">label</i><div>@manju</div></p>
+                </div>
+                <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                <!-- Trigger/Open The Modal -->
+                <button class="scenario" onclick="showPopUp(this,'myModal')">
+                    <i class="material-icons" style="vertical-align: middle;">view_list</i>Scenario 1 Manju Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal1')">
+                    <i class="material-icons" style="vertical-align: -6px;">view_list</i>Scenario 2 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal2')">Scenario 3 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal3')">Scenario 4 Name Comes
+                    Here
+                </button>
+
+            </div>
+            <!-- Feature End -->
+            <!-- Feature Start -->
+            <button type="button" class="collapsibleM">
+                <div class="featbar">
+                    <label class="failfeature" data-feature-uri="failfeaturefile.feature"><b><i
+                            class="fa fa-file-text-o" aria-hidden="true"></i></b> Feature 2 Name comes here</label>
+                    <!-- FEATURE STATUS -->
+                    <label>
+
+                        <!-- PASS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 190, 170);background: rgb(235, 254, 252);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                16
+                            </span>
+                        </span>
+
+                        <!-- FAIL COUNT -->
+                        <span class="tagchip">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- SKIP COUNT -->
+                        <span class="tagchip" style="color: rgb(171, 190, 0);background: rgb(254, 254, 235);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- OTHERS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 51, 190);background: rgb(235, 243, 254);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                    </label>
+                </div>
+
+            </button>
+            <div class="contentM">
+                <label>
+                    @EndToEnd
+                </label>
+                <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                <!-- Trigger/Open The Modal -->
+                <button class="scenario" onclick="showPopUp(this,'myModal')">Scenario 1 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal1')">Scenario 2 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal2')">Scenario 3 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal3')">Scenario 4 Name Comes
+                    Here
+                </button>
+
+            </div>
+            <!-- Feature End -->
+            <!-- Feature Start -->
+            <button type="button" class="collapsibleM">
+                <div class="featbar">
+                    <label class="skipfeature" data-feature-uri="skipfeaturefile.feature"><b><i
+                            class="fa fa-file-text-o" aria-hidden="true"></i> </b> Feature Name comes here</label>
+                    <!-- FEATURE STATUS -->
+                    <label>
+
+                        <!-- PASS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 190, 170);background: rgb(235, 254, 252);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                16
+                            </span>
+                        </span>
+
+                        <!-- FAIL COUNT -->
+                        <span class="tagchip">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- SKIP COUNT -->
+                        <span class="tagchip" style="color: rgb(171, 190, 0);background: rgb(254, 254, 235);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- OTHERS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 51, 190);background: rgb(235, 243, 254);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                    </label>
+                </div>
+
+            </button>
+            <div class="contentM">
+                <div style="text-align: left;" class="chip">
+                    <i class="material-icons rotate-45">label</i>@SeleniumEasyDemo
+                </div>
+                <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                <!-- Trigger/Open The Modal -->
+                <button class="scenario" onclick="showPopUp(this,'myModal')">Scenario 1 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal1')">Scenario 2 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal2')">Scenario 3 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal3')">Scenario 4 Name Comes
+                    Here
+                </button>
+
+            </div>
+            <!-- Feature End -->
+            <!-- Feature Start -->
+            <button type="button" class="collapsibleM">
+                <div class="featbar">
+                    <label class="otherfeature" data-feature-uri="otherfeaturefile.feature"><b><i
+                            class="fa fa-file-text-o" aria-hidden="true"></i>
+                    </b> Feature 2 Name comes here </label>
+                    <!-- FEATURE STATUS -->
+                    <label>
+
+                        <!-- PASS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 190, 170);background: rgb(235, 254, 252);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                16
+                            </span>
+                        </span>
+
+                        <!-- FAIL COUNT -->
+                        <span class="tagchip">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- SKIP COUNT -->
+                        <span class="tagchip" style="color: rgb(171, 190, 0);background: rgb(254, 254, 235);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                        <!-- OTHERS COUNT -->
+                        <span class="tagchip" style="color: rgb(0, 51, 190);background: rgb(235, 243, 254);">
+                            <span class="tagname">
+                                <!-- <i class="material-icons" style="vertical-align: -6px;">sell</i> -->
+                                <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                                2
+                            </span>
+                        </span>
+
+                    </label>
+                </div>
+
+            </button>
+            <div class="contentM">
+                <label>
+                    @EndToEnd
+                </label>
+                <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                <!-- Trigger/Open The Modal -->
+                <button class="scenario" onclick="showPopUp(this,'myModal')">Scenario 1 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal1')">Scenario 2 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal2')">Scenario 3 Name Comes
+                    Here
+                </button>
+                <button class="scenario" onclick="showPopUp(this,'myModal3')">Scenario 4 Name Comes
+                    Here
+                </button>
+
+            </div>
+            <!-- Feature End -->
+            <!-- Features List End -->
+        </div>
+    </div>
+
+    <div class="scenarios-content">
+
+        <div class="container-title">Scenarios
+            <i id="scenariosinfo-tooltip" style="margin-left: 5px; font-size: medium;" class="fa fa-info-circle"
+               aria-hidden="true"></i>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">Scenarios Content</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                Coming Soon : Checking feasiblity<br>
+            </div>
+        </div>
+
+
+        <button onclick="showToast()">Show Snackbar</button>
+
+
+
+
+        <!--        pass symbol-->
+        Feature Pass : <i class="material-icons">check_circle</i>
+        <br>
+        scenario pass : <i class="material-icons">check</i>
+        <br>
+        <!--        fail symbol-->
+        Feature Fail : <i class="material-icons">cancel</i>
+        <br>
+        Scenario Fail : <i class="material-icons">clear</i>
+        <br>
+        <!--        other synbol-->
+        Feature Other : <i class="material-icons">pause_circle_filled</i>
+        <br>
+        Scenario Other : <i class="material-icons">pause_circle_outline</i>
+        <br>
+        <i class="material-icons">error</i>
+        <br>
+        <i class="material-icons">error_outline</i>
+        <br>
+        <!--        skip symbol-->
+        Feature Skip : <i class="material-icons">remove_circle</i>
+        <br>
+        Scenario Skip : <i class="material-icons">remove_circle_outline</i>
+        <br>
+        <!--        tag symbol-->
+        Tags : <i class="material-icons">local_offer</i>
+        <br>
+        <!--        status symbols-->
+        <i class="material-icons">sentiment_very_dissatisfied</i>
+        <i class="material-icons">sentiment_dissatisfied</i>
+        <i class="material-icons">sentiment_neutral</i>
+        <i class="material-icons">sentiment_satisfied</i>
+        <i class="material-icons">sentiment_very_satisfied</i>
+
+    </div>
+
+    <div class="logs-content">
+
+        <div class="container-title">Logs
+            <i id="logsinfo-tooltip" style="margin-left: 5px; font-size: medium;" class="fa fa-info-circle"
+               aria-hidden="true"></i>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">Log Content</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                Coming Soon<br>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="profile-content">
+
+        <div class="container-title">Profile
+            <i id="profileinfo-tooltip" style="margin-left: 5px; font-size: medium;" class="fa fa-info-circle"
+               aria-hidden="true"></i>
+        </div>
+
+        <div class="card-content">
+            <p class="card-title">Profile Content</p>
+            <div class="card-data">
+                <div class="card-start-line"></div>
+                Coming Soon<br>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--main content end-->
+
+<!--pop ups start-->
+<div class="pop-ups">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Scenario 1 Name Comes Here</h2>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center">
+                    <button type="button" class="collapsibleM">
+                        <div class="featbar">
+                            <label><p><b>Given </b>Some Given Step Comes here </p></label>
+
+                        </div>
+
+                    </button>
+                    <div style="text-align: start" class="contentM">
+                        <label>
+                            @EndToEnd
+                        </label>
+                        <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                    </div>
+                </div>
+                <p><b>Given </b>Some Given Step Comes here </p>
+                <p><b>Given </b>Some Given Step Comes here </p>
+                <div style="text-align: center">
+                    <button type="button" class="collapsibleM">
+                        <div class="featbar">
+                            <label><p><b>Given </b>Some Given Step Comes here </p></label>
+
+                        </div>
+
+                    </button>
+                    <div style="text-align: start" class="contentM">
+                        <label>
+                            @EndToEnd
+                        </label>
+                        <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <button type="button" class="collapsibleM">
+                        <div class="featbar">
+                            <label><p><b>When </b>Some When Step Comes here </p></label>
+
+                        </div>
+
+                    </button>
+                    <div style="text-align: start" class="contentM">
+                        <label>
+                            @EndToEnd
+                        </label>
+                        <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <button type="button" class="collapsibleM">
+                        <div class="featbar">
+                            <label><p><b>Given </b>Some Given Step Comes here </p></label>
+
+                        </div>
+
+                    </button>
+                    <div style="text-align: start" class="contentM">
+                        <label>
+                            @EndToEnd
+                        </label>
+                        <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <button type="button" class="collapsibleM">
+                        <div class="featbar">
+                            <label><p><b>When </b>Some When Step Comes here </p></label>
+
+                        </div>
+
+                    </button>
+                    <div style="text-align: start" class="contentM">
+                        <label>
+                            @EndToEnd
+                        </label>
+                        <p>Feature URI<br>Feature ID<br>Feature Info</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Scenario 2 Name Comes Here</h2>
+            </div>
+            <div class="modal-body">
+                <p><b>Given </b>Some Given Step Comes here </p>
+                <p><b>When </b>Some When Step Comes here </p>
+                <p><b>And </b>Some And Step Comes here </p>
+                <p><b>Given </b>Some Given Step Comes here </p>
+                <p><b>When </b>Some When Step Comes here </p>
+                <p><b>And </b>Some And Step Comes here </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Scenario 3 Name Comes Here</h2>
+            </div>
+            <div class="modal-body">
+                <p><b>Given </b>Some Given Step Comes here </p>
+                <p><b>When </b>Some When Step Comes here </p>
+                <p><b>And </b>Some And Step Comes here </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Scenario 4 Name Comes Here</h2>
+            </div>
+            <div class="modal-body">
+                <p><b>Given </b>Some Given Step Comes here </p>
+                <p><b>When </b>Some When Step Comes here </p>
+                <p><b>And </b>Some And Step Comes here </p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- pop-ups end -->
+
+<!--footer start-->
+<footer
+        style="position:fixed; right:0; bottom:0; font-size: xx-small; padding: 2px; background-color: aliceblue;text-align: center;">
+    <p>Powered by <b><a target="_blank" href="https://manjunathprabhakar.github.io/cookercucumber-maven-plugin/"
+                        style="text-decoration: none;">Cooker Cucumber Reports v3.0.0</a></b></p>
+</footer>
+<!--footer end-->
+
+<!-- ALERTS -->
+<div id="snackbar">
+    <i class="fa fa-info-circle" aria-hidden="true"></i> <span>Scenarios is Still Under Development!</span>
+    <span class="close-alert">&times;</span>
+</div>
+
+<!--scripts start-->
+<script>
+    /* ===== START OF COLLAPSIBLE IMPLEMENTATION ===== */
+    /* Code to Implement Collapasible's */
+    var coll_element = document.getElementsByClassName("collapsibleM");
+    for (var i = 0; i < coll_element.length; i++) {
+        coll_element[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+    /* ===== END OF COLLAPSIBLE IMPLEMENTATION ===== */
+</script>
+<script>
+    function showToast(type,msg) {
+        var x = document.getElementById("snackbar");
+        var defType = type === null ? "info" : type;
+        switch(type){
+            case 'success' : x.getElementsByTagName("i")[0].className = "fa fa-check-circle";
+                            x.style.backgroundColor="rgb(0,190,54)";
+                break;
+            case 'error' : x.getElementsByTagName("i")[0].className = "fa fa-close-circle";
+                x.style.backgroundColor="rgb(190,38,0)";
+                break;
+            case 'warning' : x.getElementsByTagName("i")[0].className = "fa fa-exclamation-circle";
+                x.style.backgroundColor="rgb(190,149,0)";
+                break;
+            default : x.getElementsByTagName("i")[0].className = "fa fa-info-circle";
+                x.style.backgroundColor="rgb(0,108,190)";
+                break;
+
+        }
+
+        x.getElementsByTagName("span")[0].innerText = msg;
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+</script>
+<!--scripts end-->
+
+</body>
+
+</html>
